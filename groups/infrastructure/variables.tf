@@ -26,11 +26,13 @@ variable "asg_max_instance_count" {
   type        = number
   description = "The maximum allowed number of instances in the autoscaling group for the cluster."
 }
+
 variable "asg_min_instance_count" {
   default     = 1
   type        = number
   description = "The minimum allowed number of instances in the autoscaling group for the cluster."
 }
+
 variable "asg_desired_instance_count" {
   default     = 1
   type        = number
