@@ -18,7 +18,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-module "ecs-cluster" {
+module "ecs_cluster" {
   source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster?ref=1.0.368"
 
   stack_name                  = local.stack_name
