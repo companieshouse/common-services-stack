@@ -21,13 +21,15 @@ provider "aws" {
 module "ecs_cluster" {
   source = "git@github.com:companieshouse/terraform-modules//aws/ecs/ecs-cluster?ref=1.0.368"
 
-  stack_name                  = local.stack_name
-  name_prefix                 = local.name_prefix
-  environment                 = var.environment
   aws_profile                 = var.aws_profile
-  vpc_id                      = data.aws_vpc.vpc.id
+  environment                 = var.environment
+  name_prefix                 = local.name_prefix
+  stack_name                  = local.stack_name
   subnet_ids                  = local.application_subnet_ids
+  vpc_id                      = data.aws_vpc.vpc.id
+
   ec2_key_pair_name           = var.ec2_key_pair_name
+
   enable_container_insights   = var.enable_container_insights
 
   asg_max_instance_count      = var.asg_max_instance_count
